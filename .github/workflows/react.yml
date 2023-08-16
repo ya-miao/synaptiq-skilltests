@@ -1,0 +1,68 @@
+name: React Tests
+
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "react/**"
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "react/**"
+
+
+jobs:
+  ci:
+    runs-on: ["ubuntu-latest"]
+    env:
+      NODE_ENV: test
+      WORKING_DIR: ./react
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/cache@v3
+        with:
+          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
+          path: |
+            ~/.yarn
+            ${{ github.workspace }}/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.17.0
+
+      - run: corepack enable yarn
+
+      - run: yarn
+        working-directory: ${{env.WORKING_DIR}}
+
+      - run: yarn test
+        working-directory: ${{env.WORKING_DIR}}
+
+      - run: yarn build-storybook --quiet
+        working-directory: ${{env.WORKING_DIR}}
+
+      - run: npx playwright install-deps
+
+      - name: Serve Storybook and run tests
+        working-directory: ${{env.WORKING_DIR}}
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on http://127.0.0.1:6006 && yarn test-storybook"
+
+      - run: yarn build
+        working-directory: ${{env.WORKING_DIR}}
+
+
+
+
+
