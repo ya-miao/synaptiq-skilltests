@@ -12610,6 +12610,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"luxon@npm:^3.4.1":
+  version: 3.4.1
+  resolution: "luxon@npm:3.4.1"
+  checksum: cd5e2a407cdc55a10548f6e0c1ca83590574fa3cba4d03da37113cd7dc118e6ce46b2d71ddc32cfd35a0413c15ac9a3cfdef3a2702e6862814b691048ffe0be8
+  languageName: node
+  linkType: hard
+
 "lz-string@npm:^1.5.0":
   version: 1.5.0
   resolution: "lz-string@npm:1.5.0"
@@ -15670,6 +15677,7 @@ __metadata:
     jest: ^29.6.2
     jest-environment-jsdom: ^29.6.2
     jest-mock: ^29.6.2
+    luxon: ^3.4.1
     next: 13.4.12
     next-router-mock: ^0.9.9
     postcss: 8.4.27

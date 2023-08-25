@@ -3,4 +3,3 @@ This project contains an assortment of coding exercises to assess candidates' sk
 
 - [React](https://github.com/FocusedDiversity/synaptiq-skilltests/tree/main/react)
 - [Python (Coming Soon!)](https://github.com/FocusedDiversity/synaptiq-skilltests/tree/main)
-
