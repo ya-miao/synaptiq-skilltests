@@ -84,4 +84,16 @@ const commentsList = [
     comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod illum doloremque corporis voluptatum rem!',
     dateCreated: '2023-07-29T18:32:21+0000',
   },
+  {
+    id: 10,
+    user: 'Ben',
+    comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam eius itaque ut quia tempore delectus odit!',
+    dateCreated: '2023-08-25T10:00:17+0000',
+  },
+  {
+    id: 11,
+    user: 'Melissa',
+    comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. At nobis eos sequi est!',
+    dateCreated: '2023-08-25T09:20:17+0000',
+  },
 ]
