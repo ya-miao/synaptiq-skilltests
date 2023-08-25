@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-import CommentSection from "./components/CommentSection";
-import DateListSelect from "./components/DateListSelect";
+import CommentSection from "../components/CommentSection";
+import DateListSelect from "../components/DateListSelect";
 
 const SamplePage = () => {
   const [displayPeriod, setDisplayPeriod] = useState('7 days');
