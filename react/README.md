@@ -1,5 +1,28 @@
 # Synaptiq React Skills Test
 
+## Pattern Implemented:
+Date list
+
+## Features:
+The user clicks the component to open up a dropdown menu with the following date ranges:
+
+	Today
+	Last 7 days
+    Last 30 days
+    Last year
+    All
+
+One use case -- Comments are displayed based on range selected (ie. Comments made within the past day, week, month, year, etc.)
+
+## Example Page:
+The page includes a comment section with a date list component to select a time range. Comments will be displayed only if they have been created within the range.
+
+## Additional Comments:
+Comments are sorted by date made.
+Each comment card displays the name of the user, the comment, and the date/time created relative to the current time.
+
+---------
+
 ## Your mission
 
 Create a new "combined date" control as described in the shopify polaris "patterns"
@@ -25,3 +48,5 @@ documentation at https://polaris.shopify.com/patterns/date-picking/single-date
         - Opening a pull request will verify this
         - You can also use `act -C..` from https://github.com/nektos/act to run locally
     - You should be prepared to discuss your changes in detail and explain why they are great.
+
+
